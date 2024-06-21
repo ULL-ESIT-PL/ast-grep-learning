@@ -1,4 +1,6 @@
-See https://ast-grep.github.io/guide/scan-project.html#create-scaffolding
+# Scan your project with AST-Grep
+
+See https://ast-grep.github.io/guide/scan-project.html
 
 ## Create Scaffolding
 
