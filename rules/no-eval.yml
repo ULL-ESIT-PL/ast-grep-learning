@@ -1,10 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/rule.json
 
 id: no-eval
-message: Add your rule message here....
+message: Do not use eval! Dangerous! Hazardous! Perilous!
 severity: error # error, warning, info, hint
 language: JavaScript
 rule:
-  pattern: Your Rule Pattern here...
+  pattern: eval($CODE)
 # utils: Extract repeated rule as local utility here.
 # note: Add detailed explanation for the rule.
