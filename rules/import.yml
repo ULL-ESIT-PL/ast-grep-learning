@@ -1,0 +1,17 @@
+rule:
+  pattern: import {$$$IDENTS} from './module'
+rewriters:
+- id: rewrite-identifer
+  rule:
+    pattern: $IDENT
+    kind: identifier
+  transform:
+    LIB: { convert: { source: $IDENT, toCase: lowerCase } }
+  fix: import $IDENT from './module/$LIB'
+transform:
+  IMPORTS:
+    rewrite:
+      rewriters: [rewrite-identifer]
+      source: $$$IDENTS
+      joinBy: "\n"
+fix: $IMPORTS

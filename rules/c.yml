@@ -1,0 +1,12 @@
+id: method_receiver
+language: c
+rule:
+  pattern: $R.$METHOD($$$ARGS)
+transform:
+  MAYBE_COMMA:
+    replace:
+      source: $$$ARGS
+      replace: '^.+'
+      by: ', '
+fix:
+  $METHOD(&$R$MAYBE_COMMA$$$ARGS)

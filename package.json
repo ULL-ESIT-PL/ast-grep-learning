@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "remove-async": "ast-grep scan -r rules/remove-async-def.yml test.py",
+    "test": "sg -p '$A && $A()' -r '$A?.()' test2.js",
+    "c": "sg scan --rule rules/c.yml  test.c",
+    "ci": "sg scan --rule rules/c.yml  -i test.c",
+    "go": "sg scan --rule rules/go.yml  -i test.go",
+    "ts": "sg scan --rule rules/ts.yml -i test.ts"
   },
   "keywords": [],
   "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",

@@ -1,0 +1,7 @@
+id: test-functions
+language: go
+rule:
+  kind: function_declaration
+  has:
+    field: name
+    regex: Test.*
